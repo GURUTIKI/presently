@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": "8e6bb583-63b4-459d-b0a4-efee3e3831e5",
+      "username": "tom",
+      "passwordHash": "tom"
+    }
+  ],
+  "lists": [
+    {
+      "id": "a829bf57-cf8c-4dc0-824f-50964bd8b7ab",
+      "ownerId": "8e6bb583-63b4-459d-b0a4-efee3e3831e5",
+      "title": "Birthday",
+      "description": "",
+      "theme": "default"
+    }
+  ],
+  "items": [
+    {
+      "id": "c733080e-3e19-4ec0-98d8-de74b111ce24",
+      "listId": "a829bf57-cf8c-4dc0-824f-50964bd8b7ab",
+      "name": "Laptop",
+      "url": "https://www.amazon.co.uk/Apple-2025-MacBook-13-inch-Laptop/dp/B0DZDB3LGY/?_encoding=UTF8&pd_rd_w=GefTE&content-id=amzn1.sym.6b52c2a5-fada-4e73-a099-82fe56c2e0de&pf_rd_p=6b52c2a5-fada-4e73-a099-82fe56c2e0de&pf_rd_r=XS4NFDA9M4NNHT0VMB3P&pd_rd_wg=qXHHd&pd_rd_r=5c32fa24-b959-4639-990c-9e8d7602b05d&ref_=pd_hp_d_atf_unk&th=1",
+      "price": "750",
+      "isBought": true,
+      "createdAt": 1768828576649
+    }
+  ]
+}

@@ -1,66 +1,42 @@
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className={styles.main}>
+      <nav className={styles.nav}>
+        <span className={styles.brand}>Presently</span>
+      </nav>
+      <div className={styles.hero}>
+        <div className={styles.blob} />
+        <h1 className={styles.title}>
+          Gift Giving, <span className={styles.gradientText}>Perfected.</span>
+        </h1>
+        <p className={styles.subtitle}>
+          Create wishlists, share with friends, and never get a duplicate gift again.
+          Surprises stay surprising.
+        </p>
+
+        <div className={styles.ctaGroup}>
+          <Link href="/dashboard" className="btn btn-primary">
+            Start Your List
+          </Link>
+          <Link href="/login" className="btn btn-ghost">
+            Login
+          </Link>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      <div className={`container ${styles.features}`}>
+        <div className={`glass-panel ${styles.featureCard}`}>
+          <h3>For You</h3>
+          <p>Create lists for any occasion. Add links, prices, and notes. We keep track of what's bought, but keep it a secret from you.</p>
         </div>
-      </main>
-    </div>
+        <div className={`glass-panel ${styles.featureCard}`}>
+          <h3>For Them</h3>
+          <p>Friends and family can view your list without signing up. They mark gifts as bought so others know, avoiding duplicates.</p>
+        </div>
+      </div>
+    </main>
   );
 }
