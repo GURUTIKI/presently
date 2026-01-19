@@ -68,13 +68,20 @@ const ItemModel = models.Item || model('Item', ItemSchema);
 let isConnected = false;
 async function connectMongo() {
   if (isConnected) return;
-  if (!process.env.MONGODB_URI) return;
+  if (!process.env.MONGODB_URI) {
+    console.error('MONGODB_URI is missing!');
+    return;
+  }
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    console.log('Connecting to MongoDB...');
+    await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 5000 // Fail faster if IP is blocked
+    });
     isConnected = true;
-    console.log('Connected to MongoDB');
+    console.log('Connected to MongoDB successfully');
   } catch (error) {
     console.error('MongoDB Connection Error:', error);
+    throw error; // Throw so Next.js catches it
   }
 }
 
