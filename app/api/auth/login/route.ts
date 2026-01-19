@@ -15,7 +15,12 @@ export async function POST(req: Request) {
         cookieStore.set('userId', user.id, { httpOnly: true, path: '/' });
 
         return NextResponse.json({ id: user.id, username: user.username });
-    } catch (error) {
-        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    } catch (error: any) {
+        console.error('Login Error:', error);
+        return NextResponse.json({
+            error: 'Internal Server Error',
+            details: error.message,
+            stack: error.stack
+        }, { status: 500 });
     }
 }
